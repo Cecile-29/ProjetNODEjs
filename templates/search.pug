@@ -1,0 +1,17 @@
+
+doctype html
+html(lang="fr")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body 
+        h1 Moteur de recherche 
+        if q 
+            p votre recherche <strong>#{q}</strong>  n'a donné aucun résultat
+        //form(action="/search" method="get") chgt de méthod
+        form(action="/search" method="post") 
+            input(type="search", name="q" value=q)
+            button(type="submit") Rechercher    
+
+        script(src=process.env.BROWSER_REFRESH_URL)
